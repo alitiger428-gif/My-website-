@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+    body{margin:0; background-color:lightgrey;font-family:georgia}
+    h1{text-align: center;background:linear-gradient(to bottom,darkcyan,black);padding:10px;color:white;border:10px solid maroon;
+      text-transform:capitalize;text-shadow: 0 5px 10px darkmagenta}
+  section{box-shadow:0 10px 15px;max-width: 800px;margin:30px auto;padding:20px;background-color:white;border-radius:10px}
+section p{line-height:30px;}
+  section h2{color:darkcyan;border-bottom:3px solid maroon;padding-bottom: 8px}
+  section ul{line-height: 30px;padding-left:20px;}
+section dd{margin-bottom: 10px;color:#555;}
+   section dl{font-weight: bold;margin-top:10px;padding:11px}
+ footer{background-color: darkcyan;text-align:center;padding:10px;color:white;font-size:18px;font-family:fantasy}
+  button{background-color:lightcoral;color:darkblue;padding:5px;border-radius:5px;font-size:10px;cursor:pointer}
+  button:hover{background-color:green}
+ @media(max-width:600px){ .Menu{display:grid;grid-template-columns:repeat(2, 2fr);gap:20px;margin-top:20px}}
+  .items{padding: 15px;background-color:white;border-left:5px solid black;border-radius:10px;}
+    .items h3{color:maroon;margin-top:0px}
+    .items p{line-height:25px}
+    .items strong{color:darkcyan;font-size:10px;}
+ .Quantity-card{background-color: white;padding:5px;text-align:center;box-shadow:0.90px 2px;border-radius:5px}
+ .Quantity-card botton{font-size:10px;padding:2px;margin:5px;}
+ .Quantity-card span{font-size: 10px;font-weight:bold;}
+  #resetOrder{background-color:red;color:white;padding:8px;border:none;border-radius:50px;cursor:pointer;}
+  </style>
+</head>
+  <script> 
+    function sayhello(){
+      document.getElementById("message") .innerHTML="Thank you for visiting Panda fries!";
+   document.getElementById("message").style.color="darkcyan"
+   document.getElementById("myButton").innerHTML="clicked!";}
+    function changecolor(){
+     document.getElementById("message").style.color="maroon";}
+ function orderfries(items,price){
+   ordercount= ordercount+1;
+   totalAmount=totalAmount+(Quantity*price);
+   document.getElementById("message").innerHTML="you ordered" +Quantity+"×" +items+"<br>All orders Total:Rs."+totalAmount;
+   document.getElementById("message").style.color="darkblue";console.log("Order completed");
+     document.getElementById("OrderCount").innerHTML=ordercount;                        
+       document.getElementById("totalAmount") .innerHTML=totalAmount;
+   console.log("Order completeded");}
+    let ordercount=0;
+    let totalAmount=0;
+    let Quantity=1;
+    let fries=["straight cut","crinkle cut","Golden cuts","king fries"];
+    console.log(fries.length);
+    function increase(){Quantity=Quantity +1;
+      document.getElementById("Quantity") .innerHTML=Quantity}
+    function decrease(){if (Quantity >1){Quantity=Quantity -1;
+    document.getElementById("Quantity").innerHTML=Quantity;}}
+    function resetOrder(){
+      let ordercount=0;
+    let totalAmount=0;
+    let Quantity=1;
+      document.getElementById("OrderCount").innerHTML=ordercount;
+      document.getElementById("TotalAmount").innerHTML=totalAmount;
+      document.getElementById("Quantity").innerHTML=Quantity;
+      document.getElementById("message").innerHTML="welcome to panda Fries";
+    }
+  </script>
+  <body>
+<section>
+  
+  <h1>About Panda Fries</h1>
+  <p>Welcome to<strong> Panda Fries</strong> we present delicious taste.</p>
+  <ul>
+    <li>Panda fries straight cuts</li>
+    <li>Panda fries crinkle cuts</li>
+    <li>Panda fries Golden cuts</li>
+    <li>king fries</li>
+  </ul>
+<h2>Our Manu</h2>
+
+
+  
+  <div class="Quantity-card">
+  <h2>Order Quantity</h2>
+  <p>
+    Quantity:
+  <span id="Quantity">1</span>
+    
+    <button onclick="decrease()">-</button>
+  <button onclick="increase()">+</button>
+  
+  </div>
+
+
+  
+  <div class="Menu">
+<div class="items"> 
+<h3>Panda Straight cut Fries</h3>
+  <p>crispy and delicious</p>
+<strong>Rs.599/-</strong><br><br>
+ <button onclick="orderfries('Panda Fries straight cut',599)">Order Now</button>
+</div>
+<div class="items">
+  <h3>Panda Crinkle cut Fries</h3>
+  <p>crispy and delicious</p>
+  <strong>Rs.699/-</strong><br><br>
+  <button onclick="orderfries('Panda Crinkle Cut Fries',699)">Order Now</button>
+</div>
+    <div class="items">
+<h3>Golden cuts Fries</h3>
+      <p>crispy and delicious</p>
+      <strong>Rs.499/-</strong><br><br>
+      <button onclick="orderfries('Golden cuts Fries',499)">Order Now</button>
+   </div>
+  <div class="items">
+<h3>king fries</h3>
+    <p>crispy and delicious</p>
+    <strong>Rs.399/-</strong><br><br><br>
+    <button onclick="orderfries('king fries',399)">Order Now</button>
+    
+  </div>
+  </div>
+  
+  <h2>Contact Us</h2>
+  <p><strong>Phone:</strong>0300 3000345</p>
+  <p><strong>Email:</strong>pandafries@gmail.com</p>
+  <p><strong>Address:</strong>manga raiwand road 8km,lahore</p>
+  <dl>
+
+    <dt>Monday-friday</dt>
+  <dd>11:00am-10:00am</dd>
+  <dt>saturday-sunday</dt>
+  <dd>12:00am-11:00pm</dd>
+  
+  </dl>
+
+  
+  
+  <p id="message">welcome to Panda Fries</p>
+  <p>order:<span id="OrderCount">0</span>
+</p>
+  <p>All Orders Total:Rs.<span id="TotalAmount">0</span></p>
+  <button id="resetButton" onclick="resetOrder()">reset Order</button>
+  <button id="myButton" onclick="sayhello()">Click me</button>
+  <button onclick="changecolor()">change color</button>
+</section>
+
+  <footer>
+    <p>©2026 Panda Fries all rights reserved</p>
+  </footer>
+</body >
+</html>

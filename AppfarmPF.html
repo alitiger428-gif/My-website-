@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Application Form PF</title>
+
+  <style>
+    h1 {
+      color: black;
+      font-size: 25px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: lightcyan;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    fieldset {
+      max-width: 300px;
+      margin: 10px;
+      padding: 15px;
+      border: 2px solid black;
+      border-radius: 10px;
+      background-color: white;
+    }
+
+    label {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form action="thankyou.html" method="post" enctype="multipart/form-data">
+
+    <h1>PANDA FRIES JOB APPLICATION FORM</h1>
+    <p>Fill The Form</p>
+
+    <!-- Personal Information -->
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <label for="Name">Name</label>
+      <input
+        type="text"
+        id="Name"
+        name="Name"
+        placeholder="Enter Name"
+        minlength="3"
+        required
+      >
+      <br><br>
+
+      <label for="Father">Father Name</label>
+      <input
+        type="text"
+        id="Father"
+        name="Father"
+        placeholder="Enter Father Name"
+        required
+      >
+      <br><br>
+
+      <label for="Dob">Date of Birth</label>
+      <input
+        type="date"
+        id="Dob"
+        name="Dob"
+        required
+      >
+      <br><br>
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter @gmail.com"
+        autocomplete="email"
+        required
+      >
+      <br><br>
+
+      <label for="tel">Tel #</label>
+      <input
+        type="tel"
+        id="tel"
+        name="tel"
+        placeholder="03481538000"
+        pattern="[0-9]{11}"
+        required
+      >
+      <br><br>
+
+      <label for="IDcard">ID Card #</label>
+      <input
+        type="text"
+        id="IDcard"
+        name="IDcard"
+        placeholder="37111-9793657-1"
+        pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}"
+        required
+      >
+      <br><br>
+
+    </fieldset>
+
+
+    <!-- Gender -->
+    <fieldset>
+      <legend>Gender</legend>
+
+      <input type="radio" name="Gender" id="Male" value="Male" required>
+      <label for="Male">Male</label>
+
+      <input type="radio" name="Gender" id="Female" value="Female">
+      <label for="Female">Female</label>
+
+    </fieldset>
+
+
+    <!-- Marital Status -->
+    <label for="Marital">Marital Status:</label>
+
+    <select id="Marital" name="Marital" required>
+      <option value="Single">Single</option>
+      <option value="Married">Married</option>
+      <option value="Divorced">Divorced</option>
+    </select>
+
+    <br><br>
+
+
+    <!-- Qualification -->
+    <label for="Qualification">Qualification</label>
+
+    <select id="Qualification" name="Qualification" required>
+      <option value="Matric">Matric</option>
+      <option value="Intermediate">Intermediate</option>
+      <option value="Graduation">Graduation</option>
+      <option value="Master">Master</option>
+    </select>
+
+    <br><br>
+
+
+    <!-- Job Detail -->
+    <fieldset>
+      <legend>Job Detail</legend>
+
+      <label for="Cv">Upload CV</label>
+
+      <input
+        type="file"
+        id="Cv"
+        name="Cv"
+        accept=".pdf,application/pdf"
+        required
+      >
+
+      <br><br>
+
+      <label for="Department">Department</label>
+
+      <select id="Department" name="Department" required>
+        <option value="Account">Account</option>
+        <option value="QA">QA</option>
+        <option value="Production">Production</option>
+        <option value="Packing">Packing</option>
+        <option value="Dispatch">Dispatch</option>
+        <option value="Salesmen">Salesmen</option>
+      </select>
+
+    </fieldset>
+
+
+    <!-- Address -->
+    <label for="Address">Address</label>
+    <br>
+
+    <textarea
+      id="Address"
+      name="Address"
+      cols="40"
+      rows="10"
+      placeholder="Enter Address"
+      required
+    ></textarea>
+
+    <br><br>
+
+
+    <!-- Buttons -->
+    <button type="submit">Submit Application</button>
+    <button type="reset">Clear Form</button>
+
+  </form>
+
+</body>
+</html>
