@@ -36,6 +36,34 @@
     * {box-sizing; border-box} 
    html,body{magine:0; padding:0; width:100%;max-width:100%}
     body{overflow-x: hidden;}
+    . container {width:100%;max-width:1000px; margin:0 auto; padding:16px;}
+    h1, h2 {
+  font-size: clamp(24px, 5vw, 40px);
+  overflow-wrap: anywhere;
+}
+
+p {
+  font-size: clamp(16px, 3vw, 22px);
+  line-height: 1.5;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 12px;
+  }
+}
   </style>
 </head>
 <body>
