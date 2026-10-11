@@ -1,97 +1,242 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title> Panda Fries 🍟 </title>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda Fries 🍟</title>
   <style>
+    * { box-sizing: border-box; }
 
-     #main-heading{color:white; background:linear-gradient(to bottom, darkcyan,black);text-align:center;padding:10px;border:solid maroon 10px;text-transform:capitalize;letter-spacing:8px;text-shadow: 3px 3px 5px darkmagenta}
-    .intro{font-family: calibri;font-size:25px}
-    .description{box-shadow:0 7px 10px;font-size: 30px;background-color:white;text-align:center;border:4px solid black}
-    nav{background-color:lightskyblue;border:2px solid black;font-family:Arial, Helvetica, sans-serif;width:100%;display:flex;justify-content: center;align-items:center;height:auto;gap:6px;min-height:60px}
-    nav a{color:white;font-family:calibri;font-size:17px;font-weight:bold;text-decoration: none;display: inline-block;text-align:center;padding:10px 15px;background-color:darkcyan;border-radius: 10px;transition: 0.3s;box-shadow:0 4px 8px gray;min-width: 30px}
-    nav a:active{background-color: black;transform:scale(1.30);}
-    body{background:linear-gradient(to right,lightcoral,lightskyblue,white)}
-    .card{
-      max-width: 100%; height:auto;overflow: auto;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 15px;
-    padding: 20px;position:relative;z-index:1;
-    margin: 20px;box-shadow:0 6px 12px black;
-    box-sizing:border-box;}
-@media(max-width: 600px){
-  #main-heading {font-size: 25px;letter-spacing:3px}}
-.section-heading{font-size:18px;font-family:calibri;}
- .marketing-text{font-family:Arial;font-size:18px;line-height:1.6}
-    .pgf{max-width: 100%;height:auto;overflow:auto;border-radius:13px;
-         box-shadow:0 10px 15px;border:2px solid black;background-color:darkgrey;padding:8px;
-        position:relative; left:10px}
-    .product{display:flex;width:100%;gap:10px;flex-wrap:wrap;}
-    .product-card{flex:1 1 120px;box-sizing: border-box;padding:20px;background-color:white;border:2px solid black;}
-    .function{font-size: 18px;font-family:Arial;line-height:1.6;position:relative;left:10px;padding:10px 20px}
-   .top {position: sticky;top:0;z-index:1000;}
-    .help-button{position:fixed;right:20px;bottom:20px;}
+    body {
+      background: linear-gradient(to right, lightcoral, lightskyblue, white);
+    }
+
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    #main-heading {
+      color: white;
+      background: linear-gradient(to bottom, darkcyan, black);
+      text-align: center;
+      padding: 10px;
+      border: solid maroon 10px;
+      text-transform: capitalize;
+      letter-spacing: 8px;
+      text-shadow: 3px 3px 5px darkmagenta;
+    }
+
+    nav {
+      background-color: lightskyblue;
+      border: 2px solid black;
+      font-family: Arial, Helvetica, sans-serif;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      min-height: 60px;
+    }
+
+    nav a {
+      color: white;
+      font-family: Calibri, sans-serif;
+      font-size: 17px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      padding: 10px 15px;
+      background-color: darkcyan;
+      border-radius: 10px;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px gray;
+      min-width: 30px;
+    }
+
+    nav a:active {
+      background-color: black;
+      transform: scale(1.30);
+    }
+
+    .intro {
+      font-family: Calibri, sans-serif;
+      font-size: 25px;
+    }
+
+    .description {
+      box-shadow: 0 7px 10px;
+      font-size: 30px;
+      background-color: white;
+      text-align: center;
+      border: 4px solid black;
+    }
+
+    .subtitle {
+      font-size: 25px;
+      font-family: Calibri, sans-serif;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .product {
+      display: flex;
+      width: 100%;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .product-card {
+      flex: 1 1 120px;
+      padding: 20px;
+      background-color: white;
+      border: 2px solid black;
+    }
+
+    .pgf {
+      max-width: 100%;
+      overflow: auto;
+      border-radius: 13px;
+      box-shadow: 0 10px 15px;
+      border: 2px solid black;
+      background-color: darkgrey;
+      padding: 8px;
+      margin-left: 10px;
+    }
+
+    .potato-text {
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
+    }
+
+    .card {
+      max-width: 100%;
+      overflow: auto;
+      background-color: white;
+      border: 2px solid black;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      box-shadow: 0 6px 12px black;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      font-family: Calibri, sans-serif;
+    }
+
+    .marketing-text {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .function {
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin-left: 10px;
+      padding: 10px 20px;
+    }
+
+    .help-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      #main-heading {
+        font-size: 25px;
+        letter-spacing: 3px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="top">
-    <h1 id="main-heading">PANDA FRIES</h1>
-  <nav>
-  <a href="index.html">Home</a><a href="About.html">About</a><a href="AppfarmPF.html">Farm</a><a href="ProductD.html">Products</a></nav>
-      </div>
+    <h1 id="main-heading">Panda Fries</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="AppfarmPF.html">Farm</a>
+      <a href="ProductD.html">Products</a>
+    </nav>
+  </div>
+
   <main>
-<h1 class="intro">Introduction about Panda Fries</h1>
-<p class="description">Panda fries is a food industry located in Lahore,Pakistan. Which provides variant taste of fries.Panda fries serves tons of fries to fries lovers.
-    
-</p> 
+    <h2 class="intro">Introduction about Panda Fries</h2>
+    <p class="description">
+      Panda Fries is a food company in Lahore, Pakistan, that offers fries in a variety of flavors. Panda Fries serves tons of fries to fries lovers.
+    </p>
 
-  <p style="font-size: 25px; font-family: calibri"><b><i>Panda fries have following products.</i></b></p>
-<div class="product">
- <div class="product-card">Panda Fries Straight cuts </div>
-    <div class="product-card">Panda Fries 7mm cuts</div>
- <div class="product-card"> Panda fries Crinkle cuts</div>
-  <div class="product-card">King Fries Straight cuts</div>
-  <div class="product-card">Patatas fries straight cuts</div>
-  <div class="product-card">Golden cuts fries Defrost</div>
-</div>
+    <p class="subtitle">Panda Fries has the following products.</p>
+    <div class="product">
+      <div class="product-card">Panda Fries Straight Cuts</div>
+      <div class="product-card">Panda Fries 7mm Cuts</div>
+      <div class="product-card">Panda Fries Crinkle Cuts</div>
+      <div class="product-card">King Fries Straight Cuts</div>
+      <div class="product-card">Patatas Fries Straight Cuts</div>
+      <div class="product-card">Golden Cuts Fries Defrost</div>
+    </div>
 
-<p class="pgf">
-we made fries for fries lovers.Our first priority our customer's satisfaction.We have done all parameter to make Panda fries best.if we gets any complain regarding our products we takes immidiate action and make sure that mistake never repeat again.we don't blame we ae perfact but we are improving day by day.</p>
-  <h2>Types of potatoes</h2><p style="font-family:calibri;font-size:12px;">There are so many Types of potatoes but here are most commonly used in Panda fries two types </p>
+    <p class="pgf">
+      We make fries for fries lovers. Our first priority is our customers' satisfaction. We have done everything to make Panda Fries the best. If we get any complaint regarding our products, we take immediate action and make sure the mistake never repeats. We don't claim to be perfect, but we improve every day.
+    </p>
+
+    <h2>Types of Potatoes</h2>
+    <p class="potato-text">There are many types of potatoes, but the two most commonly used in Panda Fries are:</p>
     <ul>
-    <li> AVR</li>
+      <li>AVR</li>
       <li>LR</li>
-  </ul>
-<div class="card">
-we use two type of potatoes such as AVR,LR All kind of potatoes produced in pakistan.<br>Potatoes bought from different areas and cities.<br>The most commonly used AVR in panda fries.AVR have best taste ,color and size .Which makes fries quality best.<br>we ensure proper hygiene from start to end.<br>
-  In few years Panda fries will becomes internaional brand.<br>Now panda fries leading the fries industries all over in the pakistan.
+    </ul>
 
-</div>
-  <h1 class="intro">Panda Fries Departments</h1>
-    <p>The whole Plant runs by GM with different Department.Every Department has a seprate manager.All managers directly answer to the GM.All departments and their efficiencies are as follows.</p>
-  <a href="TableForm.html">Data Analysis</a>
-<h1 class="intro">Marketing</h1>
-  
-<p> There are various stretgies for marketing but Panda fries mostly follows these two.</p>
-  <ul>
- <li>Direct Marketing</li>
-    <li>Indirect Marketing</li>
-  </ul>
-  <h3 class="section-heading">Direct Marketing</h3>
-  <p class="marketing-text">Panda fries has direct marketing deal with PTV.On social media with official accounts and websites.Panda fries have deal with multiple shopping 🛒 malls. which is help to increase panda fries markete.</p>
-  <h3 class="section-heading"> Indirect Marketing</h3>
-    <p class="marketing-text">Panda fries also does indirect marketing with salesman shop to shop.And gives free testing this kind of  strategy makes strong connection between customer and company.</p>
-  <h1 class="intro">Annual Function</h1>
-  <p class="function">Panda fries dose every year annual Function.Annual function day is a holiday in company.The Function organized by owner.<br>In this function every employee invited
-    by the company.Every employee loves to participate in this function because everyone gets chance to interact with higher 
-    managements and owner in good environment.<br>In the annual function company gives reward for the best performence in a year.At the end everyone enjoys delicious dishes.</p>
- <button class="help-button">Help</button>
-    </main>
+    <div class="card">
+      We use two types of potatoes: AVR and LR. All our potatoes are produced in Pakistan.<br>
+      Potatoes are bought from different areas and cities.<br>
+      AVR is the most commonly used in Panda Fries. AVR has the best taste, color, and size, which makes the fries top quality.<br>
+      We ensure proper hygiene from start to end.<br>
+      In a few years, Panda Fries will become an international brand.<br>
+      Panda Fries is now leading the fries industry all over Pakistan.
+    </div>
+
+    <h2 class="intro">Panda Fries Departments</h2>
+    <p>
+      The whole plant is run by a GM with different departments. Every department has a separate manager. All managers answer directly to the GM. See the Data Analysis page for department details.
+    </p>
+    <a href="TableForm.html">Data Analysis</a>
+
+    <h2 class="intro">Marketing</h2>
+    <p>There are various strategies for marketing, but Panda Fries mostly follows these two:</p>
+    <ul>
+      <li>Direct Marketing</li>
+      <li>Indirect Marketing</li>
+    </ul>
+
+    <h3 class="section-heading">Direct Marketing</h3>
+    <p class="marketing-text">
+      Panda Fries has a direct marketing deal with PTV. It is also on social media with official accounts and a website. Panda Fries has deals with multiple shopping 🛒 malls, which helps increase its market.
+    </p>
+
+    <h3 class="section-heading">Indirect Marketing</h3>
+    <p class="marketing-text">
+      Panda Fries also does indirect marketing with salesmen going shop to shop and giving free tasting. This kind of strategy builds a strong connection between customers and the company.
+    </p>
+
+    <h2 class="intro">Annual Function</h2>
+    <p class="function">
+      Panda Fries holds an annual function every year. Annual function day is a holiday in the company. The function is organized by the owner.<br>
+      Every employee is invited by the company. Everyone loves to participate because they get a chance to interact with senior management and the owner in a good environment.<br>
+      At the annual function, the company gives rewards for the best performance of the year. At the end, everyone enjoys delicious dishes.
+    </p>
+
+    <button class="help-button">Help</button>
+  </main>
+
   <footer>
-    <p>&copy; This website Designed by Ali Raza</p>
+    <p>&copy; This website designed by Ali Raza</p>
   </footer>
-  
-  
 </body>
-    </html>
+</html>
